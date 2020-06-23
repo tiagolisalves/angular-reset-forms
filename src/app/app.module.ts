@@ -3,16 +3,19 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormModule } from './form/form.module';
+import { HashLocationStrategy } from '@angular/common';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
+  declarations: [AppComponent],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    FormModule,
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [HashLocationStrategy],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
