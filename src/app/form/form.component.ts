@@ -1,4 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import {
+  FormBuilder,
+  FormGroup,
+  Validator,
+  Validators,
+  NgForm,
+} from '@angular/forms';
 
 @Component({
   selector: 'app-form',
@@ -6,7 +13,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./form.component.scss'],
 })
 export class FormComponent implements OnInit {
-  constructor() {}
+  exampleForm: FormGroup;
 
-  ngOnInit(): void {}
+  constructor(private fb: FormBuilder) {}
+
+  ngOnInit(): void {
+    this.exampleForm = this.fb.group({ name: [null, Validators.required] });
+  }
+
+  submit() {
+    console.log('Form submitted!');
+    this.exampleForm.reset();
+  }
 }
