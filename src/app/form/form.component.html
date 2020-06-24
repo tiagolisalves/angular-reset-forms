@@ -1,4 +1,4 @@
-<form (ngSubmit)="submit()" [formGroup]="exampleForm">
+<form (ngSubmit)="submit()" #form="ngForm" [formGroup]="exampleForm">
   <div>
     <mat-form-field class="example-form-field">
       <mat-label>Name</mat-label>

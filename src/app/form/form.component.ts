@@ -15,6 +15,9 @@ import {
 export class FormComponent implements OnInit {
   exampleForm: FormGroup;
 
+  @ViewChild('form')
+  form: NgForm;
+
   constructor(private fb: FormBuilder) {}
 
   ngOnInit(): void {
@@ -23,6 +26,6 @@ export class FormComponent implements OnInit {
 
   submit() {
     console.log('Form submitted!');
-    this.exampleForm.reset();
+    this.form.resetForm();
   }
 }
